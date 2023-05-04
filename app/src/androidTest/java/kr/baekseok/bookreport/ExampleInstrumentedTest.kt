@@ -1,4 +1,4 @@
-package com.example.bookreport
+package kr.baekseok.bookreport
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.example.bookreport
+package kr.baekseok.bookreport
 
 import org.junit.Test
 

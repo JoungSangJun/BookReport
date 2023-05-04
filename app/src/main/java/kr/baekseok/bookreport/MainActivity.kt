@@ -1,7 +1,8 @@
-package com.example.bookreport
+package kr.baekseok.bookreport
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.bookreport.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
