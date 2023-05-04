@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "246916355620",
+    "project_id": "bookre-4b3e2",
+    "storage_bucket": "bookre-4b3e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246916355620:android:25df59dbf9a497ef48aab1",
+        "android_client_info": {
+          "package_name": "kr.baekseok.bookreport"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246916355620-j70i7okjgn0hh0ped9v71th498avcdoo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.baekseok.bookreport",
+            "certificate_hash": "0d3d9af24d94f7e3da89f2eb29f72569286a055c"
+          }
+        },
+        {
+          "client_id": "246916355620-o9j63a7618o98acr15bkuas61prju0a5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBShyjAP7UkYeSfbGnAYeww9YoFkKssRHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246916355620-o9j63a7618o98acr15bkuas61prju0a5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
