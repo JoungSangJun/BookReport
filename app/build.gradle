@@ -9,13 +9,18 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.bookreport"
+        applicationId "kr.baekseok.bookreport"
         minSdk 21
         targetSdk 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures{
+        viewBinding = true
+        dataBinding = true
     }
 
     buildTypes {
