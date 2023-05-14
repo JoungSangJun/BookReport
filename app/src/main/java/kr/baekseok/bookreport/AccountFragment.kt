@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.bookreport.databinding.FragmentAccountBinding
+import kr.baekseok.bookreport.databinding.FragmentAccountBinding
 
 class AccountFragment : Fragment() {
     private lateinit var aBinding: FragmentAccountBinding
@@ -17,7 +17,5 @@ class AccountFragment : Fragment() {
 
 
         return aBinding.root
-
-
     }
 }

@@ -5,9 +5,8 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
-import com.example.bookreport.R
-import com.example.bookreport.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kr.baekseok.bookreport.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,19 +22,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(mBinding.root)
         supportFragmentManager.beginTransaction().add(R.id.frameLayout, HomeFragment()).commit()
+        bottomNavigationView.selectedItemId = R.id.menu_home
 
         bottomNavigationView.setOnItemSelectedListener {
             setOnClickMenuItem(it)
         }
-
     }
 
 
-    private fun changeFragment(fragment: Fragment){
+    private fun changeFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(frameLayout.id, fragment).commit()
     }
 
-    private fun setOnClickMenuItem(menuItem : MenuItem): Boolean {
+    private fun setOnClickMenuItem(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {
             R.id.menu_home -> {
                 changeFragment(HomeFragment())
@@ -44,11 +43,11 @@ class MainActivity : AppCompatActivity() {
             R.id.menu_research -> {
                 changeFragment(SearchFragment())
                 true
-            }else -> {
+            }
+            else -> {
                 changeFragment(AccountFragment())
                 true
             }
         }
     }
-
 }

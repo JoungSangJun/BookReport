@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace 'com.example.bookreport'
+    namespace 'kr.baekseok.bookreport'
     compileSdk 33
 
     defaultConfig {

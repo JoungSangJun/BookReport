@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.bookreport.databinding.FragmentHomeBinding
+import kr.baekseok.bookreport.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
@@ -16,9 +16,6 @@ class HomeFragment : Fragment() {
     ): View {
         hBinding = FragmentHomeBinding.inflate(inflater, container, false)
 
-
         return hBinding.root
-
-
     }
 }
