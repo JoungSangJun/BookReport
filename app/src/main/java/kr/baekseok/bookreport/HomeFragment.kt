@@ -1,5 +1,6 @@
 package kr.baekseok.bookreport
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -63,6 +64,11 @@ class HomeFragment : Fragment() {
             }
         })
 
+        hBinding.fab.setOnClickListener {
+            val context = requireContext()
+            val intent = Intent(context, BookAddActivity::class.java)
+            startActivity(intent)
+        }
 
         return hBinding.root
     }

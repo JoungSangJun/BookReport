@@ -12,7 +12,10 @@
         android:theme="@style/Theme.BookReport"
         tools:targetApi="31">
         <activity
-            android:name="kr.baekseok.bookreport.MainActivity"
+            android:name=".BookAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
