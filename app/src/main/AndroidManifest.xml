@@ -13,8 +13,11 @@
         tools:targetApi="31">
         <activity
             android:name=".BookAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReportAddActivity"
             android:exported="false"
-            android:parentActivityName=".BookAddActivity" />
+            android:parentActivityName=".ReportAddActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

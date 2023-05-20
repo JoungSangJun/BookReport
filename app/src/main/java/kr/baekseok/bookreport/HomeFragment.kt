@@ -66,7 +66,7 @@ class HomeFragment : Fragment() {
 
         hBinding.fab.setOnClickListener {
             val context = requireContext()
-            val intent = Intent(context, BookAddActivity::class.java)
+            val intent = Intent(context, ReportAddActivity::class.java)
             startActivity(intent)
         }
 
