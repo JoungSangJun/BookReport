@@ -14,16 +14,16 @@ import kr.baekseok.bookreport.databinding.ActivityReportAddBinding
 
 class ReportAddActivity : AppCompatActivity() {
 
-    private lateinit var hBinding: ActivityReportAddBinding
+    private lateinit var rBinding: ActivityReportAddBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        hBinding = ActivityReportAddBinding.inflate(layoutInflater)
-        setContentView(hBinding.root)
+        rBinding = ActivityReportAddBinding.inflate(layoutInflater)
+        setContentView(rBinding.root)
         supportActionBar?.title = "독서록 쓰기"
 
-        hBinding.btBookSelect.setOnClickListener {
+        rBinding.btBookSelect.setOnClickListener {
             val intent = Intent(this, BookAddActivity::class.java)
             startActivity(intent)
         }
