@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.json.Json
 import kr.baekseok.bookreport.databinding.ActivityReportAddBinding
+import kr.baekseok.data.VolumeInfo
 
 /*
  책 추가하기 버튼 누르면 어떻게 책 고를건지
@@ -22,6 +25,9 @@ class ReportAddActivity : AppCompatActivity() {
         rBinding = ActivityReportAddBinding.inflate(layoutInflater)
         setContentView(rBinding.root)
         supportActionBar?.title = "독서록 쓰기"
+        val json = intent.getStringExtra("key")
+        val bookInfo = json?.let { Json.decodeFromString<VolumeInfo>(it) }
+
 
         rBinding.btBookSelect.setOnClickListener {
             val intent = Intent(this, BookAddActivity::class.java)

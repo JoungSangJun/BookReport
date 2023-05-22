@@ -7,12 +7,14 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_book_image1"
         android:layout_width="100dp"
-        android:layout_height="100dp" />
+        android:layout_height="100dp"
+        android:layout_marginBottom="10dp" />
 
     <TextView
         android:id="@+id/tv_book_title1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:text="hi"
         android:textColor="@color/black"
         android:textSize="20sp" />
