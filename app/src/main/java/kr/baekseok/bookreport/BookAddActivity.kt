@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import kr.baekseok.bookreport.databinding.ActivityBookAddBinding
 import kr.baekseok.data.BooksInfoRepository
@@ -61,9 +62,13 @@ class BookAddActivity : AppCompatActivity() {
     private fun setupRecyclerView() {
         val recyclerView = bBinding.recyclerView
         adapter =
-            BookRecyclerAdapter(bookAddViewModel.booksUiState.value!!, LayoutInflater.from(this))
+            BookRecyclerAdapter(
+                this,
+                bookAddViewModel.booksUiState.value!!,
+                LayoutInflater.from(this)
+            )
         recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
     }
 
     private fun setupViews() {

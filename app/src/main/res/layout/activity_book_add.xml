@@ -38,7 +38,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
+            android:layout_width="334dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@id/constraint2"
             app:layout_constraintEnd_toEndOf="@id/constraint2"

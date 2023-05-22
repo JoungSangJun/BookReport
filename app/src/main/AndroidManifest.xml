@@ -14,7 +14,7 @@
         <activity
             android:name=".BookAddActivity"
             android:exported="false"
-            android:parentActivityName=".BookAddActivity"/>
+            android:parentActivityName=".BookAddActivity" />
         <activity
             android:name=".ReportAddActivity"
             android:exported="false"
