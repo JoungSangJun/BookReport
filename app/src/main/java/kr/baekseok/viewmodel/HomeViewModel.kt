@@ -12,12 +12,7 @@ import retrofit2.HttpException
 import java.io.IOException
 
 
-sealed interface BooksUiState {
-    data class Success(val booksInfo: BooksInfo) : BooksUiState
-    object Error : BooksUiState
-    object Loading : BooksUiState
-    object Initial : BooksUiState
-}
+
 
 class HomeViewModel(private val booksInfoRepository: BooksInfoRepository) : ViewModel() {
     var booksUiState: BooksUiState by mutableStateOf(BooksUiState.Initial)
