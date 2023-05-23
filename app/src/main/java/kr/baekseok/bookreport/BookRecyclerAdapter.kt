@@ -27,7 +27,7 @@ class BookRecyclerAdapter(
         itemView
     ) {
         var bookTitle: TextView = itemView.findViewById(R.id.tv_book_title1)
-        var bookImg: ImageView = itemView.findViewById(R.id.img_book_image1)
+        var bookImg: ImageView = itemView.findViewById(R.id.iv_book_image1)
 
         init {
             itemView.setOnClickListener {

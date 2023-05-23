@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import kr.baekseok.bookreport.databinding.ActivityReportAddBinding
@@ -25,9 +26,8 @@ class ReportAddActivity : AppCompatActivity() {
         rBinding = ActivityReportAddBinding.inflate(layoutInflater)
         setContentView(rBinding.root)
         supportActionBar?.title = "독서록 쓰기"
-        val json = intent.getStringExtra("key")
-        val bookInfo = json?.let { Json.decodeFromString<VolumeInfo>(it) }
 
+        getBookInfoAndDisplay()
 
         rBinding.btBookSelect.setOnClickListener {
             val intent = Intent(this, BookAddActivity::class.java)
@@ -35,6 +35,24 @@ class ReportAddActivity : AppCompatActivity() {
         }
     }
 
+    private fun getBookInfoAndDisplay() {
+        // BookAddActivity에서 선택한 책 데이터 받아옴
+        val bookInfoJason = intent.getStringExtra("key")
+        val bookInfo = bookInfoJason?.let { Json.decodeFromString<VolumeInfo>(it) }
+
+        if (bookInfo != null) {
+            rBinding.tvBookTitle.text = bookInfo.volumeInfo.title
+            // 선택한 책 중 이미지가 등록되지 않은 책 처리하기 위함
+            if (bookInfo.volumeInfo.imageLinks != null) {
+                Glide.with(this)
+                    .load(bookInfo.volumeInfo.imageLinks.smallThumbnail.replace("http", "https"))
+                    .into(rBinding.ivBook)
+            } else {
+                rBinding.ivBook.setImageResource(R.drawable.image_no)
+            }
+        }
+
+    }
 
     // 등록버튼 생성
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
