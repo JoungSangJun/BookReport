@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">BookReport</string>
+    <string name="btn_register">로그인/회원가입 -></string>
+    <string name="btn_findId">ID / PW 찾기</string>
+    <string name="btn_guestMode">게스트 모드</string>
+    <string name="btn_help">도움말</string>
+    <string name="btn_setting">설정</string>
+    <string name="btn_info">앱 정보</string>
 </resources>
