@@ -6,4 +6,20 @@
     <string name="btn_help">도움말</string>
     <string name="btn_setting">설정</string>
     <string name="btn_info">앱 정보</string>
+    <string name="hin_email">아이디</string>
+    <string name="login_password">비밀번호</string>
+    <string name="find_password">비밀번호를 잊으셨습니까?</string>
+    <string name="btn_login">로그인</string>
+    <string name="tx_go_register">등록된 계정이 없으신가요?</string>
+    <string name="btn_register1">회원가입</string>
+    <string name="tx_nickname">닉네임</string>
+    <string name="edt_nickname">닉네임을 입력하세요</string>
+    <string name="edt_email">이메일을 입력하세요</string>
+    <string name="tx_password">비밀번호</string>
+    <string name="edt_password">비밀번호를 입력하세요</string>
+    <string name="tx_passConfirm">비밀번호 확인</string>
+    <string name="edt_passConfirm">비밀번호를 한번 더 입력해주세요</string>
+    <string name="btn_register3">회원가입</string>
+    <string name="tx_register">회원가입</string>
+
 </resources>
