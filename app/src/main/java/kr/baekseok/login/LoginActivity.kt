@@ -13,8 +13,8 @@ import kr.baekseok.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var lBinding : ActivityLoginBinding
-    val loginViewModel : LoginViewModel by viewModels()
+    private lateinit var lBinding: ActivityLoginBinding
+    val loginViewModel: LoginViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,27 +26,27 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    fun setObserve(){
-        loginViewModel.showRegisterActivity.observe(this){
-            if(it){
+    fun setObserve() {
+        loginViewModel.showRegisterActivity.observe(this) {
+            if (it) {
                 finish()
                 startActivity(Intent(this, RegisterActivity::class.java))
             }
         }
 
-        loginViewModel.showHomeActivity.observe(this){
-            if(it){ // showHomeActivity의 값이 true 면 화면 이동
+        loginViewModel.showHomeActivity.observe(this) {
+            if (it) { // showHomeActivity의 값이 true 면 화면 이동
                 finish()
                 startActivity(Intent(this, MainActivity::class.java))
                 Toast.makeText(this, "로그인 성공", Toast.LENGTH_SHORT).show()
-            }else{
+            } else {
                 Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
             }
         }
 
     }
 
-    fun join(){
+    fun join() {
         loginViewModel.showRegisterActivity.value = true
     }
 }

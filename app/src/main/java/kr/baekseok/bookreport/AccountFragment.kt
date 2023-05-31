@@ -23,7 +23,8 @@ class AccountFragment : Fragment() {
 
         return aBinding.root
     }
-    fun btnRegister(){
+
+    fun btnRegister() {
         aBinding.btnRegister.setOnClickListener {
             startActivity(Intent(activity, LoginActivity::class.java))
         }

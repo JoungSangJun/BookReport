@@ -14,9 +14,12 @@ import kr.baekseok.login.LoginActivity
 
 class RegisterActivity : AppCompatActivity() {
 
-    private lateinit var rBinding : ActivityRegisterBinding
+    private lateinit var rBinding: ActivityRegisterBinding
+    var mPass = 0
+    var mPassCon = 0
+    var mEmail = 0
 
-    val registerViewModel : RegisterViewModel by viewModels()
+    val registerViewModel: RegisterViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,35 +31,34 @@ class RegisterActivity : AppCompatActivity() {
         setObserve()
     }
 
-    fun setObserve(){
-        registerViewModel.showActivityMain.observe(this){
-            if(it){
+    fun setObserve() {
+        registerViewModel.showActivityMain.observe(this) {
+            if (it) {
                 finish()
-                startActivity(Intent(this,LoginActivity::class.java))
-                Toast.makeText(this,"회원가입에 성공했습니다.", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, LoginActivity::class.java))
+                Toast.makeText(this, "회원가입에 성공했습니다.", Toast.LENGTH_SHORT).show()
                 Log.d("showActivityMain", "true")
-            }else{
+            } else {
                 Log.d("showActivityMain", "false")
             }
         }
 
-        registerViewModel.pass_confirm_textColor.observe(this){
-            if(it == false){
+        registerViewModel.pass_confirm_textColor.observe(this) {
+            if (it == false) {
                 rBinding.passwordConfirmGuidance.setTextColor(Color.parseColor("#FF0000"))
             }
         }
 
-        registerViewModel.pass_textColor.observe(this){
-            if(it == false){
+        registerViewModel.pass_textColor.observe(this) {
+            if (it == false) {
                 rBinding.passwordGuidance.setTextColor(Color.parseColor("#FF0000"))
             }
         }
 
-        registerViewModel.email_textColor.observe(this){
-            if(it == false){
+        registerViewModel.email_textColor.observe(this) {
+            if (it == false) {
                 rBinding.emailGuidance.setTextColor(Color.parseColor("#FF0000"))
             }
         }
-
     }
 }
