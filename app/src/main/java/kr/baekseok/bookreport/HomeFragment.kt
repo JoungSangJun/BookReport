@@ -8,12 +8,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kr.baekseok.bookreport.databinding.FragmentHomeBinding
 import kr.baekseok.data.BooksInfoRepository
 import kr.baekseok.data.DefaultAppContainer
+import kr.baekseok.register.RegisterActivity
 import kr.baekseok.viewmodel.BooksUiState
 import kr.baekseok.viewmodel.HomeViewModel
 
@@ -32,7 +38,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var hBinding: FragmentHomeBinding
     lateinit var homeViewModel: HomeViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -40,6 +45,17 @@ class HomeFragment : Fragment() {
         val homeViewModelFactory =
             HomeViewModelFactory(booksInfoRepository = DefaultAppContainer().booksPhotosRepository)
         homeViewModel = ViewModelProvider(this, homeViewModelFactory).get(HomeViewModel::class.java)
+
+        val mAuth : FirebaseAuth = Firebase.auth
+        val user : FirebaseUser = mAuth.currentUser!!
+
+        user.getIdToken(true).addOnCompleteListener{//자동 로그인
+            if(it.isSuccessful){
+                var idToken : String = it.getResult().token!!
+                Toast.makeText(activity,"로그인 되었습니다.",Toast.LENGTH_SHORT).show()
+            }
+        }
+
 
         hBinding.rectangle2.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -70,6 +86,13 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        autoLogin()
+
         return hBinding.root
     }
+
+    fun autoLogin() {
+
+    }
+
 }
