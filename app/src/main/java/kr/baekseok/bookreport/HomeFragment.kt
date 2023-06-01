@@ -46,13 +46,13 @@ class HomeFragment : Fragment() {
             HomeViewModelFactory(booksInfoRepository = DefaultAppContainer().booksPhotosRepository)
         homeViewModel = ViewModelProvider(this, homeViewModelFactory).get(HomeViewModel::class.java)
 
-        val mAuth : FirebaseAuth = Firebase.auth
-        val user : FirebaseUser = mAuth.currentUser!!
+        val mAuth: FirebaseAuth = Firebase.auth
+        val user: FirebaseUser = mAuth.currentUser!!
 
-        user.getIdToken(true).addOnCompleteListener{//자동 로그인
-            if(it.isSuccessful){
-                var idToken : String = it.getResult().token!!
-                Toast.makeText(activity,"로그인 되었습니다.",Toast.LENGTH_SHORT).show()
+        user.getIdToken(true).addOnCompleteListener {//자동 로그인
+            if (it.isSuccessful) {
+                var idToken: String = it.getResult().token!!
+                Toast.makeText(activity, "로그인 되었습니다.", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -64,15 +64,6 @@ class HomeFragment : Fragment() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 // 텍스트 변경 중에 호출됩니다.
                 homeViewModel.getBooksInfo(s.toString())
-                when (homeViewModel.booksUiState) {
-                    is BooksUiState.Loading -> Log.d("testt", "Loading")
-                    is BooksUiState.Success -> Log.d(
-                        "testt",
-                        (homeViewModel.booksUiState as BooksUiState.Success).booksInfo.items[0].volumeInfo.title
-                    )
-                    is BooksUiState.Error -> Log.d("testt", "error")
-                    else -> Log.d("testt", "init")
-                }
             }
 
             override fun afterTextChanged(s: Editable?) {
