@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    android:layout_height="match_parent">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,9 +11,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:layout_marginEnd="187dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/tx_home"
@@ -31,14 +29,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint2"
-        android:background="#BAB8B8"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/constraint1"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="#BAB8B8"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint1">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -46,118 +43,112 @@
         android:id="@+id/constraint3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraint2"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint2">
 
         <ImageView
             android:id="@+id/img_register"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/baseline_account_circle_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="5dp"
             android:layout_marginRight="290dp"
-            />
+            android:src="@drawable/baseline_account_circle_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/btn_register"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="150dp"
             android:text="@string/btn_register"
             android:textSize="19sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/img_register"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="150dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_register"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint4"
-        android:background="#BAB8B8"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="3dp"
-        app:layout_constraintTop_toBottomOf="@+id/constraint3"
-        app:layout_constraintStart_toStartOf="parent"
+        android:background="#BAB8B8"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint3">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint5"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@+id/constraint4"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
-        
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint4">
+
         <ImageView
             android:id="@+id/img_findId"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginEnd="330dp"
             android:src="@drawable/outline_lock_24"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginEnd="330dp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/btn_findId"
+            android:id="@+id/btn_resetPw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_findId"
+            android:layout_marginLeft="8dp"
+            android:text="@string/btn_reset_password1"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_findId"
-            android:layout_marginLeft="8dp"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-    
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint6"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/constraint5"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint5">
 
         <ImageView
             android:id="@+id/img_guestMode"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginEnd="330dp"
             android:src="@drawable/outline_account_circle_24"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="330dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_guestMode"
-            app:layout_constraintStart_toEndOf="@+id/img_guestMode"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginLeft="8dp"
+            android:text="@string/btn_guestMode"
             android:textSize="18dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_guestMode"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -165,32 +156,31 @@
         android:id="@+id/constraint7"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/constraint6"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint6">
 
         <ImageView
             android:id="@+id/img_help"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginRight="330dp"
             android:src="@drawable/outline_description_24"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginRight="330dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_help"
-            app:layout_constraintStart_toEndOf="@+id/img_help"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="8dp"
+            android:text="@string/btn_help"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_help"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -198,32 +188,31 @@
         android:id="@+id/constraint8"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/constraint7"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint7">
 
         <ImageView
             android:id="@+id/img_setting"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginEnd="330dp"
             android:src="@drawable/outline_settings_24"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="330dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_setting"
-            app:layout_constraintStart_toEndOf="@+id/img_setting"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="8dp"
+            android:text="@string/btn_setting"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_setting"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -231,33 +220,32 @@
         android:id="@+id/constraint9"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:layout_constraintTop_toBottomOf="@+id/constraint8"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint8">
 
         <ImageView
             android:id="@+id/img_info"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginRight="330dp"
             android:src="@drawable/outline_info_24"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginRight="330dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_info"
-            app:layout_constraintStart_toEndOf="@+id/img_info"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="8dp"
+            android:text="@string/btn_info"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_info"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

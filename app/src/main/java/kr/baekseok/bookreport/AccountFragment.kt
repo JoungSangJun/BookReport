@@ -20,6 +20,8 @@ class AccountFragment : Fragment() {
 
 
         btnRegister()
+        btnResetPw()
+
 
         return aBinding.root
     }
@@ -27,6 +29,12 @@ class AccountFragment : Fragment() {
     fun btnRegister() {
         aBinding.btnRegister.setOnClickListener {
             startActivity(Intent(activity, LoginActivity::class.java))
+        }
+    }
+
+    fun btnResetPw(){
+        aBinding.btnResetPw.setOnClickListener {
+            startActivity(Intent(activity, PasswordResetActivity::class.java))
         }
     }
 
