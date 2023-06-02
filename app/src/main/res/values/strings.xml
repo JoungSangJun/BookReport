@@ -25,5 +25,11 @@
     <string name="tx_passwordReset2">재설정 비밀번호</string>
     <string name="tx_passwordResetConfirm">재설정 비밀번호 확인</string>
     <string name="btn_reset_password2">비밀번호 재설정</string>
-
+    <string name="tx_app_info">앱 정보</string>
+    <string name="tx_terms_of_use">이용약관</string>
+    <string name="tx_terms_of_use_content">본 약관은 \'북 리포트\'가 제공하는 서비스 및 관련 제반 서비스의 이용과 관련하여 당사와 서비스 이용자간에 권리ㆍ의무 및 기타 필요한 사항을 규정함을 목적으로 합니다.</string>
+    <string name="tx_tepersonal_information_processing">개인정보 처리방침</string>
+    <string name="tx_tepersonal_information_processing_content">\'북 리포트\'는 개인정보보호법, 정보통신망 이용촉진 등에 관한 법률 등 정보통신 서비스 제공자가 준수하여야 할  관련 법령상의 개인정보보호 규정을 준수하며, 관련 법령에 의거한 개인정보 처리방침을 정하여 회원 권익 보호에 최선을 다하고 있습니다.</string>
+    <string name="tx_app_version">앱 버전</string>
+    <string name="tx_app_version_content">1.0.0</string>
 </resources>

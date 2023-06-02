@@ -9,9 +9,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0425d0c6-09a5-4862-bb15-a024618fce8d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/bookreport/PasswordResetActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_password_reset.xml" afterDir="false" />
+    <list default="true" id="d925bc48-f788-4bd6-b3b4-8d0a60c0018c" name="Changes" comment="Merge branch 'feature/book-reviews-sangjun' into develop&#10;&#10;# Conflicts:&#10;#&#9;.gradle/7.5/executionHistory/executionHistory.bin&#10;#&#9;.gradle/7.5/executionHistory/executionHistory.lock&#10;#&#9;.gradle/7.5/fileHashes/fileHashes.bin&#10;#&#9;.gradle/7.5/fileHashes/fileHashes.lock&#10;#&#9;.gradle/7.5/fileHashes/resourceHashesCache.bin&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/file-system.probe&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/src/main/java/kr/baekseok/bookreport/HomeFragment.kt">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/bookreport/AppInfoActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_app_info.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -22,7 +22,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/bookreport/AccountFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/bookreport/AccountFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/bookreport/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/bookreport/HomeFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_account.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_account.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
@@ -45,6 +44,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -59,18 +63,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "last_directory_selection": "C:/Users/Administrator/Documents/GitHub/BookReport/app/src/main/res/drawable",
-    "last_opened_file_path": "C:/Users/Administrator/Documents/GitHub/CapstoneApp",
-    "memory.settings.postsync.last.time.stamp": "1685634581861",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/Administrator/Documents/GitHub/BookReport/app/src/main/res/drawable&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Documents/GitHub/CapstoneApp&quot;,
+    &quot;memory.settings.postsync.last.time.stamp&quot;: &quot;1685634581861&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Documents\GitHub\BookReport\app\src\main\res\drawable" />
@@ -146,7 +150,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0425d0c6-09a5-4862-bb15-a024618fce8d" name="Changes" comment="" />
+      <changelist id="d925bc48-f788-4bd6-b3b4-8d0a60c0018c" name="Changes" comment="Merge branch 'feature/book-reviews-sangjun' into develop&#10;&#10;# Conflicts:&#10;#&#9;.gradle/7.5/executionHistory/executionHistory.bin&#10;#&#9;.gradle/7.5/executionHistory/executionHistory.lock&#10;#&#9;.gradle/7.5/fileHashes/fileHashes.bin&#10;#&#9;.gradle/7.5/fileHashes/fileHashes.lock&#10;#&#9;.gradle/7.5/fileHashes/resourceHashesCache.bin&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/file-system.probe&#10;#&#9;.idea/workspace.xml&#10;#&#9;app/src/main/java/kr/baekseok/bookreport/HomeFragment.kt" />
       <created>1685471211677</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -159,7 +163,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
