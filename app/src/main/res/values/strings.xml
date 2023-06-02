@@ -32,4 +32,11 @@
     <string name="tx_tepersonal_information_processing_content">\'북 리포트\'는 개인정보보호법, 정보통신망 이용촉진 등에 관한 법률 등 정보통신 서비스 제공자가 준수하여야 할  관련 법령상의 개인정보보호 규정을 준수하며, 관련 법령에 의거한 개인정보 처리방침을 정하여 회원 권익 보호에 최선을 다하고 있습니다.</string>
     <string name="tx_app_version">앱 버전</string>
     <string name="tx_app_version_content">1.0.0</string>
+    <string name="tx_app_guide">이용방법</string>
+    <string name="tx_home">홈</string>
+    <string name="tx_home_guide_content">홈 화면에서는 자신이 작성한 독후감을 볼 수 있어요.\n만약 독후감을 많이 작성해 독후감을 찾기 어렵다면 검색창을 이용해 자신이 작성한 독후감을 찾아보세요.\n\n오른쪽 아래에 있는 "+"를 클릭해 독후감을 작성할 수 있어요.\n자신이 읽은 책은 책 선택하기를 선택해 책을 선택할 수 있습니다.\n\n제목과 내용을 작성한 후 등록버튼을 눌러 독후감을 작성해보세요.</string>
+    <string name="tx_search">검색</string>
+    <string name="tx_search_guide_content">무슨 책을 읽을지 고민되시나요?\n\n다른 사람들이 미리 읽고 남긴 후기를 참고해보세요.\n후기가 궁금한 책을 검색해 클릭하면 다른 사람들이 읽고 남긴 후기를 볼 수 있습니다. </string>
+    <string name="tx_account">계정</string>
+    <string name="tx_account_guide_content">계정에 관련된 사항이 필요하신가요?(ex:회원가입)\n\n계정탭에 들어가시면 계정에 관련된 모든 것을 할 수 있습니다.\n\n또한 회원가입이 귀찮은 분들을 위해 게스트 모드로 접속이 가능합니다.\n게스트 모드로 접속시 책에 대한 후기를 남기는 기능 빼고 모두 이용이 가능하십니다.</string>
 </resources>

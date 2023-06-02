@@ -12,6 +12,9 @@
         android:theme="@style/Theme.BookReport"
         tools:targetApi="31">
         <activity
+            android:name=".AppGuideActivity"
+            android:exported="false" />
+        <activity
             android:name=".AppInfoActivity"
             android:exported="false" />
         <activity
