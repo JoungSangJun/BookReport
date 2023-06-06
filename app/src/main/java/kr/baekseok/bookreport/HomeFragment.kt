@@ -9,11 +9,13 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kr.baekseok.adapter.ItemSpacingDecoration
 import kr.baekseok.adapter.ReportRecyclerAdapter
 import kr.baekseok.addreport.BookReportApplication
 import kr.baekseok.addreport.ReportAddActivity
@@ -58,23 +60,19 @@ class HomeFragment : Fragment() {
 
         setupRecyclerView()
 
+        homeViewModel.reportUiState.observe(viewLifecycleOwner) { newData ->
+            val diffResult = DiffUtil.calculateDiff(
+                ReportRecyclerAdapter.ReportDiffCallback(
+                    reportAdapter.data,
+                    newData
+                )
+            )
+            reportAdapter.data = newData
+            diffResult.dispatchUpdatesTo(reportAdapter)
+        }
 
-//        hBinding.rectangle2.addTextChangedListener(object : TextWatcher {
-//            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-//            }
-//
-//            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-//                // 텍스트 변경 중에 호출됩니다.
-//                homeViewModel.getBooksInfo(s.toString())
-//            }
-//
-//            override fun afterTextChanged(s: Editable?) {
-//                // 텍스트 변경 후에 호출됩니다.
-//            }
-//        })
 
         hBinding.fab.setOnClickListener {
-            homeViewModel.getAllBooksReport()
             val context = requireContext()
             val intent = Intent(context, ReportAddActivity::class.java)
             startActivity(intent)
@@ -87,17 +85,18 @@ class HomeFragment : Fragment() {
 
     private fun setupRecyclerView() {
         val recyclerView = hBinding.reportRecyclerView
+        val itemSpacingDecoration = ItemSpacingDecoration(50)
+        recyclerView.addItemDecoration(itemSpacingDecoration)
         reportAdapter =
             ReportRecyclerAdapter(
                 requireContext(),
                 homeViewModel.reportUiState.value ?: listOf(
-                    BookReportData(0, "hi", "hi"),
-                    BookReportData(0, "hi", "hi")
+
                 ),
                 LayoutInflater.from(requireContext())
             )
         recyclerView.adapter = reportAdapter
-        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
     }
 
     fun autoLogin() {

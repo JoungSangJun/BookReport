@@ -11,8 +11,8 @@ import androidx.room.PrimaryKey
 data class BookReportData(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-//    @ColumnInfo(name = "book_img")
-//    val bookImg: Bitmap? = null,
+    @ColumnInfo(name = "book_img")
+    val bookImg: String? = null,
     @ColumnInfo(name = "book_title")
     val bookTitle: String = "",
     @ColumnInfo(name = "book_content")

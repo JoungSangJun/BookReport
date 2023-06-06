@@ -6,8 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
-@Database(entities = [BookReportData::class], version = 1)
-@TypeConverters(RoomTypeConverter::class)
+@Database(entities = [BookReportData::class], version = 2)
 abstract class BookReportDatabase : RoomDatabase() {
     abstract fun bookReportDao(): BookReportDao
 
