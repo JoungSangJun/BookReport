@@ -65,10 +65,23 @@ class ReportAddActivity : AppCompatActivity() {
         reportAddViewModel =
             ViewModelProvider(this, reportAddViewModelFactory).get(ReportAddViewModel::class.java)
 
+        rBinding.tvBookDelete.setOnClickListener {
+            reportAddViewModel.deleteSelectedReport(reportInfo!!.id)
+            finish()
+        }
 
         rBinding.btBookSelect.setOnClickListener {
             val intent = Intent(this, BookAddActivity::class.java)
             startActivity(intent)
+        }
+
+        rBinding.tvBookEdit.setOnClickListener {
+            reportAddViewModel.update(
+                reportInfo!!.bookImg!!,
+                rBinding.etTitle.text.toString(),
+                rBinding.etContent.text.toString(), 10
+            )
+            finish()
         }
 
         rBinding.tvBookRegistration.setOnClickListener {
