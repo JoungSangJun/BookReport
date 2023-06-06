@@ -1,16 +1,20 @@
 package kr.baekseok.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Rect
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.net.toUri
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import kr.baekseok.addreport.ReportAddActivity
 import kr.baekseok.bookreport.R
 import kr.baekseok.room.BookReportData
 
@@ -52,6 +56,14 @@ class ReportRecyclerAdapter(
         var reportTitle: TextView = itemView.findViewById(R.id.tv_report_title1)
         var reportImg: ImageView = itemView.findViewById(R.id.iv_report_image1)
 
+        init {
+            itemView.setOnClickListener {
+                val position: Int = bindingAdapterPosition
+                val intent = Intent(context, ReportAddActivity::class.java)
+                intent.putExtra("book_report_data", data[position])
+                startActivity(context, intent, null)
+            }
+        }
 
     }
 
