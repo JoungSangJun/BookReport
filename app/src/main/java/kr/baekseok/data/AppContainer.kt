@@ -2,6 +2,8 @@ package kr.baekseok.data
 
 import kotlinx.serialization.json.Json
 import kr.baekseok.network.BooksApiService
+import kr.baekseok.room.BookReportDao
+import kr.baekseok.room.BookReportDatabase
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -10,7 +12,6 @@ interface AppContainer {
 }
 
 class DefaultAppContainer : AppContainer {
-
     private val BASE_URL = "https://www.googleapis.com"
 
     private val json = Json {
