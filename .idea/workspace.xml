@@ -16,11 +16,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/addreport/ReportAddActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/addreport/ReportAddActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/addreport/ReportAddViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/addreport/ReportAddViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/room/BookReportDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/room/BookReportDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/bookreport/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/bookreport/HomeFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/viewmodel/HomeViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/kr/baekseok/viewmodel/HomeViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,10 +75,10 @@
   },
   "keyToStringList": {
     "com.android.tools.idea.sqlite.queryhistory": [
+      "delete from bookreport",
       "select * from bookreport",
       "update bookreport set book_title = \"ababab\" where id = 10",
       "Select * from BookReport",
-      "delete from bookreport",
       "Delete from BookReport"
     ]
   }
