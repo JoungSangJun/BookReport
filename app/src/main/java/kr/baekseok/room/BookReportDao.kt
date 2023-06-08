@@ -17,6 +17,13 @@ interface BookReportDao {
 
     @Query(
         """
+        SELECT * FROM BookReport WHERE book_title LIKE '%' || :reportTitle || '%'
+        """
+    )
+    suspend fun searchReportByTitle(reportTitle: String): List<BookReportData>
+
+    @Query(
+        """
     UPDATE BookReport SET book_img = :bookImg, book_title = :bookTitle, book_content = :bookContent WHERE id = :selectedId
     """
     )

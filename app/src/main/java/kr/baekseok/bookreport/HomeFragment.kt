@@ -2,6 +2,8 @@ package kr.baekseok.bookreport
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -60,6 +62,7 @@ class HomeFragment : Fragment() {
             }
         }
 
+        editTextChange()
         setupRecyclerView()
 
         // reportUiState 변경되면 변경된 값 RecyclerView에 적용
@@ -85,6 +88,22 @@ class HomeFragment : Fragment() {
         autoLogin()
 
         return hBinding.root
+    }
+
+    fun editTextChange() {
+        hBinding.rectangle2.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // 텍스트 변경 중에 호출됩니다.
+                homeViewModel.searchReportByTitle(s.toString())
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // 텍스트 변경 후에 호출됩니다.
+            }
+        })
     }
 
     override fun onResume() {

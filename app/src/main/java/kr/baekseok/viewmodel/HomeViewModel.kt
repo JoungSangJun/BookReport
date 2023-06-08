@@ -15,8 +15,14 @@ class HomeViewModel(private val bookReportDao: BookReportDao) : ViewModel() {
     }
 
     init {
-        Log.d("testt","viewModel init")
+        Log.d("testt", "viewModel init")
         getAllBooksReport()
+    }
+
+    fun searchReportByTitle(reportTitle: String) {
+        viewModelScope.launch {
+            reportUiState.value = bookReportDao.searchReportByTitle(reportTitle)
+        }
     }
 
     fun getAllBooksReport() {
