@@ -46,9 +46,10 @@ class ReportAddActivity : AppCompatActivity() {
         val bookInfo = bookInfoJason?.let { Json.decodeFromString<VolumeInfo>(it) }
         getBookInfoAndDisplay(bookInfo)
 
+        // 독후감을 CRUD하기 위해 액티비티에 들어온다면 독후감에 대한 내용 받아옴
         val reportInfo = intent.getParcelableExtra<BookReportData>("book_report_data")
 
-        // 독후감을 읽기 위해 독후감을 클릭 or 독후감 추가하기 위해 클릭했는지 판별
+        // 독후감을 CRUD하기 위해 독후감을 클릭 or 독후감 추가하기 위해 클릭했는지 판별
         if (reportInfo?.bookTitle?.isNotEmpty() == true) {
             rBinding.tvBookRegistration.visibility = View.INVISIBLE
             rBinding.tvBookEdit.visibility = View.VISIBLE
@@ -65,10 +66,25 @@ class ReportAddActivity : AppCompatActivity() {
         reportAddViewModel =
             ViewModelProvider(this, reportAddViewModelFactory).get(ReportAddViewModel::class.java)
 
+        rBinding.tvBookDelete.setOnClickListener {
+            reportAddViewModel.deleteSelectedReport(reportInfo!!.id)
+            finish()
+        }
 
         rBinding.btBookSelect.setOnClickListener {
             val intent = Intent(this, BookAddActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
             startActivity(intent)
+        }
+
+        rBinding.tvBookEdit.setOnClickListener {
+            reportAddViewModel.update(
+                reportInfo!!.bookImg!!,
+                rBinding.etTitle.text.toString(),
+                rBinding.etContent.text.toString(),
+                reportInfo.id
+            )
+            finish()
         }
 
         rBinding.tvBookRegistration.setOnClickListener {
