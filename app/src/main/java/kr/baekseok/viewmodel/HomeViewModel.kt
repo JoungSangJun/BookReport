@@ -1,6 +1,5 @@
 package kr.baekseok.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,19 +9,10 @@ import kr.baekseok.room.BookReportData
 
 class HomeViewModel(private val bookReportDao: BookReportDao) : ViewModel() {
 
-    val reportUiState: MutableLiveData<List<BookReportData>> by lazy {
-        MutableLiveData<List<BookReportData>>()
-    }
+    val reportUiState: MutableLiveData<List<BookReportData>> = MutableLiveData()
 
     init {
-        Log.d("testt", "viewModel init")
         getAllBooksReport()
-    }
-
-    fun searchReportByTitle(reportTitle: String) {
-        viewModelScope.launch {
-            reportUiState.value = bookReportDao.searchReportByTitle(reportTitle)
-        }
     }
 
     fun getAllBooksReport() {

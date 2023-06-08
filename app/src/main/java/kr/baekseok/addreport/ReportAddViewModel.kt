@@ -10,29 +10,6 @@ import kr.baekseok.room.BookReportData
 class ReportAddViewModel(
     private val bookReportDao: BookReportDao
 ) : ViewModel() {
-
-    fun deleteSelectedReport(selectedId: Int) {
-        viewModelScope.launch {
-            bookReportDao.deleteSelectedReport(selectedId)
-        }
-    }
-
-    fun update(
-        bookImg: String,
-        bookTitle: String,
-        bookContent: String,
-        selectedId: Int
-    ) {
-        viewModelScope.launch {
-            bookReportDao.updateReport(
-                bookImg,
-                bookTitle,
-                bookContent,
-                selectedId
-            )
-        }
-    }
-
     fun insert(bookReportData: BookReportData) {
         viewModelScope.launch {
             bookReportDao.insert(bookReportData)
