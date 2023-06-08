@@ -1,6 +1,8 @@
 package kr.baekseok.bookreport
 
+import android.app.backup.SharedPreferencesBackupHelper
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -39,7 +41,12 @@ class HomeFragment : Fragment() {
 
     private lateinit var hBinding: FragmentHomeBinding
     lateinit var homeViewModel: HomeViewModel
+<<<<<<< HEAD
     private lateinit var reportAdapter: ReportRecyclerAdapter
+=======
+    var loginLogoutCode: Int = 0
+
+>>>>>>> feature#hyeongu
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -48,6 +55,7 @@ class HomeFragment : Fragment() {
             HomeViewModelFactory(booksReportDao = (requireActivity().application as BookReportApplication).bookReportDatabase.bookReportDao())
         homeViewModel = ViewModelProvider(this, homeViewModelFactory).get(HomeViewModel::class.java)
 
+<<<<<<< HEAD
         val mAuth: FirebaseAuth = Firebase.auth
         val user: FirebaseUser = mAuth.currentUser!!
 
@@ -55,6 +63,21 @@ class HomeFragment : Fragment() {
             if (it.isSuccessful) {
                 var idToken: String = it.getResult().token!!
                 Toast.makeText(activity, "로그인 되었습니다.", Toast.LENGTH_SHORT).show()
+=======
+        val mAuth : FirebaseAuth = Firebase.auth
+        val user = mAuth.currentUser
+
+        user?.getIdToken(true)?.addOnCompleteListener{//자동 로그인
+            if(it.isSuccessful){
+//                var idToken : String = it.result.token!!
+                loginLogoutCode = 1
+                MyApplication.preferences.setInt("loginLogoutCode", loginLogoutCode)
+                Toast.makeText(activity,"로그인 되었습니다.",Toast.LENGTH_SHORT).show()
+            }else{
+                loginLogoutCode = 0
+                MyApplication.preferences.setInt("loginLogoutCode", loginLogoutCode)
+                Toast.makeText(activity,"로그인 되지 않았습니다.",Toast.LENGTH_SHORT).show()
+>>>>>>> feature#hyeongu
             }
         }
 

@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">BookReport</string>
     <string name="btn_register">로그인/회원가입 -></string>
+<<<<<<< HEAD
     <string name="btn_reset_password1">PW 재설정</string>
+=======
+    <string name="btn_findId">비밀번호 찾기</string>
+>>>>>>> feature#hyeongu
     <string name="btn_guestMode">게스트 모드</string>
     <string name="btn_help">도움말</string>
     <string name="btn_setting">설정</string>
@@ -21,6 +25,7 @@
     <string name="edt_passConfirm">비밀번호를 한번 더 입력해주세요</string>
     <string name="btn_register3">회원가입</string>
     <string name="tx_register">회원가입</string>
+<<<<<<< HEAD
     <string name="tx_passwordReset1">비밀번호 재설정</string>
     <string name="tx_passwordReset2">재설정 비밀번호</string>
     <string name="tx_passwordResetConfirm">재설정 비밀번호 확인</string>
@@ -43,4 +48,9 @@
     <string name="tx_add_book_report">등록하기</string>
     <string name="tx_edit_book_report">수정하기</string>
     <string name="tx_delete_book_report">삭제하기</string>
+=======
+    <string name="dialog_guest">게스트 모드로 전환하시겠습니까?</string>
+    <string name="tx_loginState">로그인이 필요합니다.</string>
+
+>>>>>>> feature#hyeongu
 </resources>
