@@ -1,16 +1,16 @@
 package kr.baekseok.bookreport
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
+import kr.baekseok.adapter.BookRecyclerAdapter
 import kr.baekseok.bookreport.databinding.ActivityBookAddBinding
 import kr.baekseok.data.BooksInfoRepository
 import kr.baekseok.data.DefaultAppContainer
@@ -32,7 +32,7 @@ class BookAddActivity : AppCompatActivity() {
 
     private lateinit var bBinding: ActivityBookAddBinding
     lateinit var bookAddViewModel: BookAddViewModel
-    private lateinit var adapter: BookRecyclerAdapter
+    private lateinit var bookAdapter: BookRecyclerAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -51,23 +51,24 @@ class BookAddActivity : AppCompatActivity() {
         editTextChange()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun observeBooksUiState() {
         val dataObserver: Observer<BooksUiState> = Observer { liveData ->
-            adapter.data = liveData
-            adapter.notifyDataSetChanged()
+            bookAdapter.data = liveData
+            bookAdapter.notifyDataSetChanged()
         }
         bookAddViewModel.booksUiState.observe(this, dataObserver)
     }
 
     private fun setupRecyclerView() {
         val recyclerView = bBinding.recyclerView
-        adapter =
+        bookAdapter =
             BookRecyclerAdapter(
                 this,
                 bookAddViewModel.booksUiState.value!!,
                 LayoutInflater.from(this)
             )
-        recyclerView.adapter = adapter
+        recyclerView.adapter = bookAdapter
         recyclerView.layoutManager = GridLayoutManager(this, 2)
     }
 

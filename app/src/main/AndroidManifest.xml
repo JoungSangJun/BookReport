@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
-        android:name=".MyApplication"
+        android:name="kr.baekseok.addreport.BookReportApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,7 +13,13 @@
         android:theme="@style/Theme.BookReport"
         tools:targetApi="31">
         <activity
-            android:name="kr.baekseok.login.FindPassActivity"
+            android:name=".AppGuideActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AppInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordResetActivity"
             android:exported="false" />
         <activity
             android:name="kr.baekseok.register.RegisterActivity"
@@ -26,9 +32,9 @@
             android:exported="false"
             android:parentActivityName=".BookAddActivity" />
         <activity
-            android:name=".ReportAddActivity"
+            android:name="kr.baekseok.addreport.ReportAddActivity"
             android:exported="false"
-            android:parentActivityName=".ReportAddActivity" />
+            android:parentActivityName="kr.baekseok.addreport.ReportAddActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
