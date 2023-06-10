@@ -52,13 +52,12 @@ class HomeFragment : Fragment() {
             HomeViewModelFactory(booksReportDao = (requireActivity().application as BookReportApplication).bookReportDatabase.bookReportDao())
         homeViewModel = ViewModelProvider(this, homeViewModelFactory).get(HomeViewModel::class.java)
 
-        val mAuth: FirebaseAuth = Firebase.auth
-        val user: FirebaseUser = mAuth.currentUser!!
+        val mAuth : FirebaseAuth = Firebase.auth
+        val user = mAuth.currentUser
 
-        user.getIdToken(true).addOnCompleteListener {//자동 로그인
+        user?.getIdToken(true)?.addOnCompleteListener {//자동 로그인
             if (it.isSuccessful) {
                 var idToken: String = it.getResult().token!!
-                Toast.makeText(activity, "로그인 되었습니다.", Toast.LENGTH_SHORT).show()
             }
         }
 
