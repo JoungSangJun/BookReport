@@ -1,33 +1,33 @@
 package kr.baekseok.viewmodel
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
+import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import kr.baekseok.data.BooksInfo
-import kr.baekseok.data.BooksInfoRepository
-import retrofit2.HttpException
-import java.io.IOException
+import kr.baekseok.room.BookReportDao
+import kr.baekseok.room.BookReportData
 
+class HomeViewModel(private val bookReportDao: BookReportDao) : ViewModel() {
 
+    val reportUiState: MutableLiveData<List<BookReportData>> by lazy {
+        MutableLiveData<List<BookReportData>>()
+    }
 
+    init {
+        Log.d("testt", "viewModel init")
+        getAllBooksReport()
+    }
 
-class HomeViewModel(private val booksInfoRepository: BooksInfoRepository) : ViewModel() {
-    var booksUiState: BooksUiState by mutableStateOf(BooksUiState.Initial)
-        private set
-
-    fun getBooksInfo(title: String) {
+    fun searchReportByTitle(reportTitle: String) {
         viewModelScope.launch {
-            booksUiState = try {
-                val listResult = booksInfoRepository.getBooksInfo(title)
-                BooksUiState.Success(listResult)
-            } catch (e: IOException) {
-                BooksUiState.Error
-            } catch (e: HttpException) {
-                BooksUiState.Error
-            }
+            reportUiState.value = bookReportDao.searchReportByTitle(reportTitle)
+        }
+    }
+
+    fun getAllBooksReport() {
+        viewModelScope.launch {
+            reportUiState.value = bookReportDao.getAllBooksReport()
         }
     }
 }
